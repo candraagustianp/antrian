@@ -8,4 +8,9 @@ class AntrianModel extends CI_Model {
     function save($data) {
         $this->db->insert('antri',$data);
     }
+
+    function findAntrian($tanggal) {
+        $this->db->select('pukul');
+        return $this->db->where(['tanggal' => $tanggal])->get('antri')->result_array();
+    }
 }

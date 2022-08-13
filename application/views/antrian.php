@@ -32,7 +32,11 @@
                 <label for="no_telp" class="form-label">Masukan Nomor Telepon</label>
                 <input type="text" name="no_telp" class="form-control" id="no_telp" placeholder="Nomor Telepon">
             </div>
-            <input type="hidden" name="pukul" class="form-control" id="pukul" >
+            <div class="mb-1">
+                <label for="pukul" class="form-label">Jam Kedatangan</label>
+                <input type="hidden" name="pukul" class="form-control" id="pukul" >
+            </div>
+            
             <div class="d-grid gap-2">
                 <button id="btnJam" class="btn btn-outline-primary btn-block" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePukul" aria-expanded="false" aria-controls="collapsePukul">
                     Pilih Jam Antri
@@ -40,54 +44,22 @@
                 <div class="collapse" id="collapsePukul">
                     <hr>
                     <div class="row no-gutters">
-                        <div class="col-sm-6 col-md-3">
-                            <div id="jam_0" data-value="08:00:00 AM" class="jamklik card my-1 mx-2" data-bs-toggle="collapse" data-bs-target="#collapsePukul" aria-expanded="false" aria-controls="collapsePukul">
-                                <div class="card-body p-2 position-relative">
-                                    <h4 class="m-0 text-center">08:00:00 AM</h4>
-                                    <span class="badge text-bg-danger position-absolute top-0 start-100 translate-middle">1</span>
+                    <?php 
+                            $jam = strtotime($jam_buka);
+                            while ($jam <= strtotime("-$waktu_layanan minutes", strtotime($jam_tutup))) {
+                                ?>
+                                <div class="col-sm-6 col-md-3">
+                                    <div data-value="<?= date('h:i:s', $jam); ?>" class="jamklik card my-1 mx-2" data-bs-toggle="collapse" data-bs-target="#collapsePukul" aria-expanded="false" aria-controls="collapsePukul">
+                                        <div class="card-body p-2 position-relative">
+                                            <h4 class="m-0 text-center"><?= date('h:i:s', $jam) ?></h4>
+                                            <span class="badge text-bg-danger position-absolute top-0 start-100 translate-middle">1</span>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-3">
-                            <div id="jam_1" data-value="08:20:00 AM"  class="jamklik card my-1 mx-2" data-bs-toggle="collapse" data-bs-target="#collapsePukul" aria-expanded="false" aria-controls="collapseExample">
-                                <div class="card-body p-2 position-relative">
-                                    <h4 class="m-0 text-center">08:20:00 AM</h4>
-                                    <span class="badge text-bg-danger position-absolute top-0 start-100 translate-middle">1</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-3">
-                            <div id="jam_2" data-value="08:40:00 AM" class="card my-1 mx-2" data-bs-toggle="collapse" data-bs-target="#collapsePukul" aria-expanded="false" aria-controls="collapseExample">
-                                <div class="card-body p-2 position-relative">
-                                    <h4 class="m-0 text-center">08:40:00 AM</h4>
-                                    <span class="badge text-bg-danger position-absolute top-0 start-100 translate-middle">1</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-3">
-                            <div id=""  data-value="09:00:00 AM"  class="jamklik card my-1 mx-2" data-bs-toggle="collapse" data-bs-target="#collapsePukul" aria-expanded="false" aria-controls="collapseExample">
-                                <div class="card-body p-2 position-relative">
-                                    <h4 class="m-0 text-center">09:00:00 AM</h4>
-                                    <span class="badge text-bg-danger position-absolute top-0 start-100 translate-middle">1</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-3">
-                            <div id="" data-value="09:20:00 AM"  class="jamklik card my-1 mx-2" data-bs-toggle="collapse" data-bs-target="#collapsePukul" aria-expanded="false" aria-controls="collapseExample">
-                                <div class="card-body p-2 position-relative">
-                                    <h4 class="m-0 text-center">09:20:00 AM</h4>
-                                    <span class="badge text-bg-danger position-absolute top-0 start-100 translate-middle">1</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-3">
-                            <div id="" data-value="09:40:00 AM"  class="jamklik card my-1 mx-2" data-bs-toggle="collapse" data-bs-target="#collapsePukul" aria-expanded="false" aria-controls="collapseExample">
-                                <div class="card-body p-2 position-relative">
-                                    <h4 class="m-0 text-center">09:40:00 AM</h4>
-                                    <span class="badge text-bg-danger position-absolute top-0 start-100 translate-middle">1</span>
-                                </div>
-                            </div>
-                        </div>
+                        <?php
+                                $jam += strtotime("+$waktu_layanan minutes", strtotime($jam));
+                            }
+                        ?>
                     </div>
                 </div>
             </div>

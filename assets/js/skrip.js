@@ -17,12 +17,29 @@
 $(document).ready(function() {
     $(".jamklik").click(function(){
         //alert($(this).attr("data-id"));
-        $(".jamklik").removeClass("bg-dark");
-        $(".jamklik").removeClass("text-white");
-        $(this).addClass("bg-dark");
-        $(this).addClass("text-white");
+        $(".jamklik").removeClass("bg-dark text-white");
+        $(this).addClass("bg-dark text-white");
+        
         $("#btnJam").text($(this).attr("data-value"));
-        $("#btnJam").attr("class","btn btn-dark btn-block");
+        $("#btnJam").attr('class', 'btn btn-dark btn-block');;
 
+        $("#pukul").val($(this).attr("data-value"))
     }); 
+
+    $('#tanggal').change(function(){
+        let tanggal = $(this).val();
+
+            $.ajax({
+                method: "GET",
+                url: url_tanggal+"/"+tanggal,
+                dataType: 'json',
+
+                success: function(response) {
+                    $.each(response, function(key,val){
+                        $("[data-value|='"+val.pukul+"']").addClass("nonaktif");
+                   });
+                }
+            });
+        return false;
+    });
 })

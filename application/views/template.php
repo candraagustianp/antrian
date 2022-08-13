@@ -7,6 +7,16 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <style>
+      body, h1, p {
+        font-family: 'Lato', sans-serif;
+      }
+
+      body {
+        color: #2B3242;
+        background: #ddd;
+      }
+    </style>
   </head>
 
 
@@ -26,7 +36,11 @@
 			  src="https://code.jquery.com/jquery-3.6.0.js"
 			  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
 			  crossorigin="anonymous"></script>
+    <script>
+      let url_tanggal = '<?= site_url('Antrian/getAntrian/') ?>';
+    </script>
     <script src="<?= base_url('assets/js/skrip.js') ?>"></script>
+
 
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->

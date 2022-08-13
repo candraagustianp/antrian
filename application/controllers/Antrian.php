@@ -10,7 +10,10 @@ class Antrian extends CI_Controller {
     function index() {
         $this->load->view("template",[
             "content" => $this->load->view('antrian',[
-                'layanan' => $this->l->get()
+                'layanan' => $this->l->get(),
+                'waktu_layanan' => 20,
+                'jam_buka' => '08:00:00',
+                'jam_tutup' => '11:00:00'
             ],true)
         ]);
     }
@@ -18,6 +21,11 @@ class Antrian extends CI_Controller {
     function save() {
         $this->a->save($this->input->post());
         redirect('Antrian');
+    }
+
+    function getAntrian($tanggal){
+        echo json_encode($this->a->findAntrian($tanggal));
+
     }
 }
 
