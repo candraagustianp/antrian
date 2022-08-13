@@ -17,13 +17,16 @@
 $(document).ready(function() {
     $(".jamklik").click(function(){
         //alert($(this).attr("data-id"));
-        $(".jamklik").removeClass("bg-dark text-white");
-        $(this).addClass("bg-dark text-white");
-        
-        $("#btnJam").text($(this).attr("data-value"));
-        $("#btnJam").attr('class', 'btn btn-dark btn-block');;
+        if (!$(this).hasClass("nonaktif")) {
+            $(".jamklik").removeClass("bg-dark text-white");
+            $(this).addClass("bg-dark text-white");
+            
+            $("#btnJam").text($(this).attr("data-value"));
+            $("#btnJam").attr('class', 'btn btn-dark btn-block');;
 
-        $("#pukul").val($(this).attr("data-value"))
+            $("#pukul").val($(this).attr("data-value"))
+        }
+        
     }); 
 
     $('#tanggal').change(function(){
