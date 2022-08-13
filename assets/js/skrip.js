@@ -17,8 +17,12 @@
 $(document).ready(function() {
     $(".jamklik").click(function(){
         //alert($(this).attr("data-id"));
-        $(".jamklik").removeClass("active");
-        $(this).addClass("active");
-        $("#btnJam").text($(this).attr("data-id"));
+        $(".jamklik").removeClass("bg-dark");
+        $(".jamklik").removeClass("text-white");
+        $(this).addClass("bg-dark");
+        $(this).addClass("text-white");
+        $("#btnJam").text($(this).attr("data-value"));
+        $("#btnJam").attr("class","btn btn-dark btn-block");
+
     }); 
 })

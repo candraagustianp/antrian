@@ -2,7 +2,7 @@
 
 class AntrianModel extends CI_Model {
     function get() {
-        return $this->db->get('antrian')->result_array();
+        return $this->db->get('antri')->result_array();
     }
 
     function save($data) {

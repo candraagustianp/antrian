@@ -37,11 +37,11 @@
                 <button id="btnJam" class="btn btn-outline-primary btn-block" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePukul" aria-expanded="false" aria-controls="collapsePukul">
                     Pilih Jam Antri
                 </button>
-                <div class="collapse mt-3" id="collapsePukul">
+                <div class="collapse" id="collapsePukul">
                     <hr>
                     <div class="row no-gutters">
                         <div class="col-sm-6 col-md-3">
-                            <div id="jam_0" data-id="08:00:00 AM" class="jamklik card my-1 mx-2" data-bs-toggle="collapse" data-bs-target="#collapsePukul" aria-expanded="false" aria-controls="collapsePukul">
+                            <div id="jam_0" data-value="08:00:00 AM" class="jamklik card my-1 mx-2" data-bs-toggle="collapse" data-bs-target="#collapsePukul" aria-expanded="false" aria-controls="collapsePukul">
                                 <div class="card-body p-2 position-relative">
                                     <h4 class="m-0 text-center">08:00:00 AM</h4>
                                     <span class="badge text-bg-danger position-absolute top-0 start-100 translate-middle">1</span>
@@ -49,7 +49,7 @@
                             </div>
                         </div>
                         <div class="col-sm-6 col-md-3">
-                            <div id="jam_1" data-id="08:20:00 AM"  class="jamklik card my-1 mx-2" data-bs-toggle="collapse" data-bs-target="#collapsePukul" aria-expanded="false" aria-controls="collapseExample">
+                            <div id="jam_1" data-value="08:20:00 AM"  class="jamklik card my-1 mx-2" data-bs-toggle="collapse" data-bs-target="#collapsePukul" aria-expanded="false" aria-controls="collapseExample">
                                 <div class="card-body p-2 position-relative">
                                     <h4 class="m-0 text-center">08:20:00 AM</h4>
                                     <span class="badge text-bg-danger position-absolute top-0 start-100 translate-middle">1</span>
@@ -57,7 +57,7 @@
                             </div>
                         </div>
                         <div class="col-sm-6 col-md-3">
-                            <div id="jam_2" class="card my-1 mx-2" data-bs-toggle="collapse" data-bs-target="#collapsePukul" aria-expanded="false" aria-controls="collapseExample">
+                            <div id="jam_2" data-value="08:40:00 AM" class="card my-1 mx-2" data-bs-toggle="collapse" data-bs-target="#collapsePukul" aria-expanded="false" aria-controls="collapseExample">
                                 <div class="card-body p-2 position-relative">
                                     <h4 class="m-0 text-center">08:40:00 AM</h4>
                                     <span class="badge text-bg-danger position-absolute top-0 start-100 translate-middle">1</span>
@@ -65,7 +65,7 @@
                             </div>
                         </div>
                         <div class="col-sm-6 col-md-3">
-                            <div id="" class="card my-1 mx-2" data-bs-toggle="collapse" data-bs-target="#collapsePukul" aria-expanded="false" aria-controls="collapseExample">
+                            <div id=""  data-value="09:00:00 AM"  class="jamklik card my-1 mx-2" data-bs-toggle="collapse" data-bs-target="#collapsePukul" aria-expanded="false" aria-controls="collapseExample">
                                 <div class="card-body p-2 position-relative">
                                     <h4 class="m-0 text-center">09:00:00 AM</h4>
                                     <span class="badge text-bg-danger position-absolute top-0 start-100 translate-middle">1</span>
@@ -73,7 +73,7 @@
                             </div>
                         </div>
                         <div class="col-sm-6 col-md-3">
-                            <div id="" class="card my-1 mx-2" data-bs-toggle="collapse" data-bs-target="#collapsePukul" aria-expanded="false" aria-controls="collapseExample">
+                            <div id="" data-value="09:20:00 AM"  class="jamklik card my-1 mx-2" data-bs-toggle="collapse" data-bs-target="#collapsePukul" aria-expanded="false" aria-controls="collapseExample">
                                 <div class="card-body p-2 position-relative">
                                     <h4 class="m-0 text-center">09:20:00 AM</h4>
                                     <span class="badge text-bg-danger position-absolute top-0 start-100 translate-middle">1</span>
@@ -81,7 +81,7 @@
                             </div>
                         </div>
                         <div class="col-sm-6 col-md-3">
-                            <div id="" class="card my-1 mx-2" data-bs-toggle="collapse" data-bs-target="#collapsePukul" aria-expanded="false" aria-controls="collapseExample">
+                            <div id="" data-value="09:40:00 AM"  class="jamklik card my-1 mx-2" data-bs-toggle="collapse" data-bs-target="#collapsePukul" aria-expanded="false" aria-controls="collapseExample">
                                 <div class="card-body p-2 position-relative">
                                     <h4 class="m-0 text-center">09:40:00 AM</h4>
                                     <span class="badge text-bg-danger position-absolute top-0 start-100 translate-middle">1</span>
