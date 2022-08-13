@@ -22,7 +22,7 @@ $(document).ready(function() {
             $(this).addClass("bg-dark text-white");
             
             $("#btnJam").text($(this).attr("data-value"));
-            $("#btnJam").attr('class', 'btn btn-dark btn-block');;
+            $("#btnJam").attr('class', 'btn btn-dark btn-block');
 
             $("#pukul").val($(this).attr("data-value"))
         }
@@ -30,6 +30,12 @@ $(document).ready(function() {
     }); 
 
     $('#tanggal').change(function(){
+        $(".jamklik").removeClass("nonaktif");
+        $(".jamklik").attr('class', 'jamklik card my-1 mx-2');
+
+        $("#btnJam").text("Pilih Jam Antri");
+        $("#btnJam").attr('class', 'btn btn-outline-primary btn-block');
+
         let tanggal = $(this).val();
 
             $.ajax({
