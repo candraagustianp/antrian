@@ -16,6 +16,18 @@
         color: #2B3242;
         background: #ddd;
       }
+      .jamklik{
+        cursor: pointer;
+      }
+      .jamklik:hover:not(.nonaktif){
+        background-color: #136c43 !important;
+        color: #fff !important;
+      }
+      .nonaktif{
+        background-color: #696969 !important;
+        color: #cfcfcf !important;
+        cursor: not-allowed;
+      }
     </style>
   </head>
 

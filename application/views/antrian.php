@@ -38,21 +38,26 @@
             </div>
             
             <div class="d-grid gap-2">
-                <button id="btnJam" class="btn btn-outline-primary btn-block" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePukul" aria-expanded="false" aria-controls="collapsePukul">
+                <button id="btnJam" class="btn btn-outline-success btn-block" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePukul" aria-expanded="false" aria-controls="collapsePukul">
                     Pilih Jam Antri
                 </button>
                 <div class="collapse" id="collapsePukul">
                     <hr>
                     <div class="row no-gutters">
+                    <div class="container">
+                        <div id="alert" class="text-center alert alert-danger m-3 d-none alert-dismissible fade show" role="alert">
+                            Antrian pada jam tersebut sudah direservasi, silahkan pilih pada waktu lain
+                        </div>
+                    </div>
                     <?php 
                             $jam = strtotime($jam_buka);
                             while ($jam <= strtotime("-$waktu_layanan minutes", strtotime($jam_tutup))) {
                                 ?>
                                 <div class="col-sm-6 col-md-3">
-                                    <div data-value="<?= date('h:i:s', $jam); ?>" class="jamklik card my-1 mx-2" data-bs-toggle="collapse" data-bs-target="#collapsePukul" aria-expanded="false" aria-controls="collapsePukul">
+                                    <div data-value="<?= date('h:i:s', $jam); ?>" class="jamklik card my-1 mx-2 nonaktif" >
                                         <div class="card-body p-2 position-relative">
                                             <h4 class="m-0 text-center"><?= date('h:i:s', $jam) ?></h4>
-                                            <span class="badge text-bg-danger position-absolute top-0 start-100 translate-middle">1</span>
+                                            
                                         </div>
                                     </div>
                                 </div>

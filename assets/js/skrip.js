@@ -18,11 +18,11 @@ $(document).ready(function() {
     $(".jamklik").click(function(){
         //alert($(this).attr("data-id"));
         if (!$(this).hasClass("nonaktif")) {
-            $(".jamklik").removeClass("bg-dark text-white");
-            $(this).addClass("bg-dark text-white");
+            $(".jamklik").removeClass("bg-success text-white");
+            $(this).addClass("bg-success text-white");
             
             $("#btnJam").text($(this).attr("data-value"));
-            $("#btnJam").attr('class', 'btn btn-dark btn-block');
+            $("#btnJam").attr('class', 'btn btn-success btn-block');
 
             $("#pukul").val($(this).attr("data-value"))
         }
@@ -30,11 +30,14 @@ $(document).ready(function() {
     }); 
 
     $('#tanggal').change(function(){
+        
+
         $(".jamklik").removeClass("nonaktif");
         $(".jamklik").attr('class', 'jamklik card my-1 mx-2');
 
         $("#btnJam").text("Pilih Jam Antri");
-        $("#btnJam").attr('class', 'btn btn-outline-primary btn-block');
+        $("#btnJam").attr('class', 'btn btn-outline-success btn-block');
+
 
         let tanggal = $(this).val();
 
@@ -45,10 +48,17 @@ $(document).ready(function() {
 
                 success: function(response) {
                     $.each(response, function(key,val){
-                        $("[data-value|='"+val.pukul+"']").addClass("nonaktif");
+                        $("[data-value|='"+val.pukul+"']").addClass("nonaktif").click(function() {
+                            $('#alert').removeClass('d-none');
+                
+                            setTimeout(() => {
+                                $('#alert').addClass('d-none');
+                            }, 3000);
+                        });
                    });
                 }
             });
-        return false;
     });
+
+    
 })
