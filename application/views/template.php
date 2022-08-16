@@ -35,6 +35,7 @@
     <title>Antrian</title>
   </head>
   <body>
+    
     <div class="container my-3 py-3">
         <div class="shadow-lg p-3 mb-5 bg-body rounded card border">
             <?= $content ?>
@@ -47,7 +48,30 @@
     <script
 			  src="https://code.jquery.com/jquery-3.6.0.js"
 			  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-			  crossorigin="anonymous"></script>
+			  crossorigin="anonymous">
+    </script>
+    <script>
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+      (function () {
+        'use strict'
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.querySelectorAll('.needs-validation')
+
+        // Loop over them and prevent submission
+        Array.prototype.slice.call(forms)
+          .forEach(function (form) {
+            form.addEventListener('submit', function (event) {
+              if (!form.checkValidity()) {
+                event.preventDefault()
+                event.stopPropagation()
+              }
+
+              form.classList.add('was-validated')
+            }, false)
+          })
+      })()
+    </script>
     <script>
       let url_tanggal = '<?= site_url('Antrian/getAntrian/') ?>';
     </script>
