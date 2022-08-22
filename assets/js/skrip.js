@@ -22,21 +22,26 @@ $(document).ready(function() {
             $(this).addClass("bg-success text-white");
             
             $("#btnJam").text($(this).attr("data-value"));
-            $("#btnJam").attr('class', 'btn btn-success btn-block');
+            $("#btnJam").attr('class', 'btn btn-warning btn-block');
 
             $("#pukul").val($(this).attr("data-value"))
+        } else {
+            $('#alert1').removeClass('d-none');
+                
+            setTimeout(() => {
+                $('#alert1').addClass('d-none');
+            }, 3000);
         }
         
     }); 
 
     $('#tanggal').change(function(){
-        
 
         $(".jamklik").removeClass("nonaktif");
-        $(".jamklik").attr('class', 'jamklik card my-1 mx-2');
+        $(".jamklik").attr('class', 'jamklik card my-1 mx-2 btn btn-primary');
 
         $("#btnJam").text("Pilih Jam Antri");
-        $("#btnJam").attr('class', 'btn btn-outline-success btn-block');
+        $("#btnJam").attr('class', 'btn btn-outline-warning btn-block');
 
 
         let tanggal = $(this).val();

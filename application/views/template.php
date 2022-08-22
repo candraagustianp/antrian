@@ -5,17 +5,29 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- Favicon -->
+    <!-- <link rel="apple-touch-icon" sizes="120x120" href="<?= base_url('assets') ?>/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?= base_url('assets') ?>/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?= base_url('assets') ?>/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="<?= base_url('assets') ?>/img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="<?= base_url('assets') ?>/img/favicon/safari-pinned-tab.svg" color="#ffffff">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff"> -->
+
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+    <!-- Fontawesome -->
+    <link type="text/css" href="<?= base_url('assets') ?>/vendor/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+
+    <!-- Pixel CSS -->
+    <link type="text/css" href="<?= base_url('assets') ?>/css/neumorphism.css" rel="stylesheet">
+
     <style>
       body, h1, p {
         font-family: 'Lato', sans-serif;
       }
 
-      body {
-        color: #2B3242;
-        background: #ddd;
-      }
       .jamklik{
         cursor: pointer;
       }
@@ -37,7 +49,7 @@
   <body>
     
     <div class="container my-3 py-3">
-        <div class="shadow-lg p-3 mb-5 bg-body rounded card border">
+        <div class="card bg-primary border-light shadow-soft">
             <?= $content ?>
         </div>
     </div>
