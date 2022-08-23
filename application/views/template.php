@@ -31,11 +31,11 @@
       .jamklik{
         cursor: pointer;
       }
-      .jamklik:hover:not(.nonaktif){
+      .jamklik:hover:not(.nonaktif,.reserved){
         background-color: #136c43 !important;
         color: #fff !important;
       }
-      .nonaktif{
+      .reserved, .nonaktif{
         background-color: #696969 !important;
         color: #cfcfcf !important;
         cursor: not-allowed;

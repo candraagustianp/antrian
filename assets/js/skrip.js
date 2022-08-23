@@ -17,7 +17,21 @@
 $(document).ready(function() {
     $(".jamklik").click(function(){
         //alert($(this).attr("data-id"));
-        if (!$(this).hasClass("nonaktif")) {
+        if($(this).hasClass("reserved")) {
+            $('#alert').removeClass('d-none');
+                
+            setTimeout(() => {
+                $('#alert').addClass('d-none');
+            }, 3000);
+        } else if($(this).hasClass("nonaktif")) {
+            $('#alert1').removeClass('d-none');
+                
+            setTimeout(() => {
+                $('#alert1').addClass('d-none');
+            }, 3000);
+
+            
+        } else {
             $(".jamklik").removeClass("bg-success text-white");
             $(this).addClass("bg-success text-white");
             
@@ -25,12 +39,6 @@ $(document).ready(function() {
             $("#btnJam").attr('class', 'btn btn-warning btn-block');
 
             $("#pukul").val($(this).attr("data-value"))
-        } else {
-            $('#alert1').removeClass('d-none');
-                
-            setTimeout(() => {
-                $('#alert1').addClass('d-none');
-            }, 3000);
         }
         
     }); 
@@ -53,13 +61,7 @@ $(document).ready(function() {
 
                 success: function(response) {
                     $.each(response, function(key,val){
-                        $("[data-value|='"+val.pukul+"']").addClass("nonaktif").click(function() {
-                            $('#alert').removeClass('d-none');
-                
-                            setTimeout(() => {
-                                $('#alert').addClass('d-none');
-                            }, 3000);
-                        });
+                        $("[data-value|='"+val.pukul+"']").addClass("reserved")
                    });
                 }
             });
