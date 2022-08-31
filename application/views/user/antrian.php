@@ -81,9 +81,13 @@
                         <?php 
                                 $jam = strtotime($jam_buka);
                                 while ($jam <= strtotime("-$waktu_layanan minutes", strtotime($jam_tutup))) {
+                                    if (($jam > strtotime("-$waktu_layanan minutes", strtotime($mulai_istirahat))) && ($jam < strtotime($selesai_istirahat))) {
+                                        $jam += strtotime("+$waktu_layanan minutes", strtotime($jam));
+                                        continue;
+                                    }
                                     ?>
-                                    <div class="col-sm-6 col-md-3">
-                                        <div data-value="<?= date('h:i:s', $jam); ?>" class="jamklik my-1 mx-2 nonaktif btn btn-primary" >
+                                    <div class="col-sm-6 col-md-4">
+                                        <div data-value="<?= date('h:i:s', $jam); ?>" class="jamklik my-1 mx-2 nonaktif btn btn-primary btn-block" >
                                             <div class="card-body p-2 position-relative">
                                                 <h6 class="m-0 text-center"><?= date('h:i:s', $jam) ?></h6>
                                                 
@@ -91,7 +95,7 @@
                                         </div>
                                     </div>
                             <?php
-                                    $jam += strtotime("+$waktu_layanan minutes", strtotime($jam));
+                                        $jam += strtotime("+$waktu_layanan minutes", strtotime($jam));
                                 }
                             ?>
                             <input type="hidden" name="pukul" class="form-control" id="pukul" required>
@@ -103,7 +107,7 @@
                 </div>
                 <hr>
 
-                <button type="submit" class="btn btn-primary btn-block text-secondary">Submit</button>
+                <button type="submit" class="btn btn-success btn-block text-secondary">Submit</button>
         </form>
     </div>
 </div>

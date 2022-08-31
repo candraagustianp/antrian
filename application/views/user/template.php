@@ -40,6 +40,24 @@
         color: #cfcfcf !important;
         cursor: not-allowed;
       }
+      .btn-success{
+        background-color: #002878;
+        background-image: linear-gradient(45deg, #33d9de 0%, #33d9de 55%, #243f81 90%);
+        background-position: 100% 0;
+        background-size: 200% 200%;
+        color: white !important;
+        padding: 12px 48px;
+        font-family: 'Nunito', sans-serif;
+        font-size: 16px;
+        font-weight: 200;
+        text-decoration: none;
+        box-shadow: 0 16px 32px 0 rgba(0, 40, 120, .35);
+        transition: all 0.5s ease;
+      }
+      .btn-success:hover {
+        box-shadow: 0 0px 0px 0 rgba(0, 40, 120, 0);
+        background-position: 0 0;
+      }
     </style>
   </head>
 
